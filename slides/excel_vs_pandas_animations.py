@@ -159,8 +159,8 @@ class ExcelVsPandasPivot(Scene):
         # Pandas Process
         pandas_title = Text("Pandas Process", font_size=32, color=ORANGE).shift(RIGHT * 3.5 + UP * 2)
         pandas_code = Code(
-            code="""df.groupby('Region')['Sales']\\
-  .sum()\\
+            code="""df.groupby('Region')['Sales']
+  .sum()
   .sort_values()""",
             language="python",
             font_size=18,
@@ -223,9 +223,9 @@ class ExcelVsPandasCharts(Scene):
         # Pandas section
         pandas_label = Text("Pandas", font_size=32, color=ORANGE).shift(RIGHT * 3.5 + UP * 1)
         pandas_code = Code(
-            code="df.groupby('Product')['Sales']\\
-  .sum()\\
-  .plot(kind='bar')",
+            code="""df.groupby('Product')['Sales']
+  .sum()
+  .plot(kind='bar')""",
             language="python",
             font_size=18,
             background="window",
