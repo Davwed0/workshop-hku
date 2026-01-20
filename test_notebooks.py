@@ -7,6 +7,9 @@ This ensures the workshop materials are functional and beginner-friendly.
 import sys
 import os
 
+# Constants
+DATA_FILE = 'data/superstore_sales.csv'
+
 def test_imports():
     """Test that all required libraries can be imported."""
     print("Testing imports...")
@@ -33,7 +36,7 @@ def test_data_loading():
     print("\nTesting data loading...")
     try:
         import pandas as pd
-        df = pd.read_csv('data/superstore_sales.csv')
+        df = pd.read_csv(DATA_FILE)
         
         # Validate data structure
         assert df.shape[0] == 60, f"Expected 60 rows, got {df.shape[0]}"
@@ -58,7 +61,7 @@ def test_basic_operations():
         import pandas as pd
         import numpy as np
         
-        df = pd.read_csv('data/superstore_sales.csv')
+        df = pd.read_csv(DATA_FILE)
         
         # Test calculations (from notebook 1)
         df['Profit'] = df['Sales'] - df['Cost']
@@ -92,7 +95,7 @@ def test_advanced_operations():
     try:
         import pandas as pd
         
-        df = pd.read_csv('data/superstore_sales.csv')
+        df = pd.read_csv(DATA_FILE)
         df['Profit'] = df['Sales'] - df['Cost']
         
         # Test merge (VLOOKUP equivalent)
@@ -136,7 +139,7 @@ def test_visualization():
         matplotlib.use('Agg')  # Use non-interactive backend
         import matplotlib.pyplot as plt
         
-        df = pd.read_csv('data/superstore_sales.csv')
+        df = pd.read_csv(DATA_FILE)
         
         # Test simple plot
         product_sales = df.groupby('Product')['Sales'].sum()
